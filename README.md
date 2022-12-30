@@ -1,3 +1,4 @@
-# Demo
+# Jatinder-repo
 
 Notes:
+Git and GitHub
