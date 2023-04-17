@@ -1,0 +1,70 @@
+<template>
+    <lightning-card variant="Narrow">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item
+                size="12"
+                padding="around-small"
+            >
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <td scope="col">
+                                <lightning-input
+                                    type="number"
+                                    variant="standard"
+                                    name="caseNumber"
+                                    value={caseNumber}
+                                    placeholder="Document Number Search"
+                                    onkeyup={handleKeyUp}
+                                ></lightning-input>
+                             <lightning-input
+                                type="number"
+                                variant="standard"
+                                name="caseNumber2"
+                                value={caseNumber2}
+                                placeholder="The Margin Of Error Search"
+                                onkeyup={handleKeyUp2}
+                            ></lightning-input>
+                            </td>
+                            <td scope="col">
+                                <lightning-input
+                                    type="text"
+                                    variant="standard"
+                                    name="accountName"
+                                    value={accountName}
+                                    placeholder="Document Titlle Search"
+                                    onkeyup={handleKeyUp}
+                                ></lightning-input>
+                            </td>
+                        </tr>
+                        
+                        <tr class="slds-line-height_reset">
+                            <th scope="col">No.</th>
+                            <th scope="col">Document Number</th>
+                            <th scope="col">Document Titlle</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr
+                            class="slds-hint-parent"
+                            for:each={searchable}
+                            for:item="item"
+                            key={item.Id}
+                        >
+                            <td scope="col">{item.index}</td>
+                            <th scope="row">
+                                <a
+                                    href="#"
+                                    onclick={handleNavigate}
+                                    data-id={item.caseData.Id}
+                                >{item.caseData.CaseNumber}
+                                </a>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

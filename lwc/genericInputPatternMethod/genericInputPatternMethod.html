@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Alphanumeric input" icon-name="utility:user"></lightning-card>
+    <lightning-input
+      type="text"
+      label="Coupon Code"
+      value={value}
+      max-length="13"
+      onblur={handleInputFocus}
+      placeholder="Enter a value"
+      pattern ={pattern}
+      message-when-pattern-mismatch="Not a valid coupon Code"
+      
+    ></lightning-input>
+
+  </template>
+  
